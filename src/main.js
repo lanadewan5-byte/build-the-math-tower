@@ -44,7 +44,7 @@ const sign=box(5,2.1,.25,mats.dark,0,4.2,-17);const signCanvas=document.createEl
 // controls and camera
 const keys={};let jumpV=0,onGround=true,selectedMove={};addEventListener('keydown',e=>{keys[e.code]=true;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault()});addEventListener('keyup',e=>keys[e.code]=false);
 document.querySelectorAll('[data-move]').forEach(b=>{const k=b.dataset.move;b.addEventListener('pointerdown',e=>{e.preventDefault();selectedMove[k]=true});['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,()=>selectedMove[k]=false))});$('jump').addEventListener('pointerdown',()=>{if(onGround){jumpV=8;onGround=false}});
-let yaw=0;const clock=new THREE.Clock();let nearSite=false,challengeOpen=false,selectedCard=null,levelIndex=Math.max(0,Math.min(challenges.length-1,Number(localStorage.getItem('bmt-level')||0))),stepIndex=0,coins=Number(localStorage.getItem('bmt-coins')||0),stars=Number(localStorage.getItem('bmt-stars')||0),soundOn=true,audioCtx=null,anim=null;
+let yaw=0;const clock=new THREE.Clock();let nearSite=false,challengeOpen=false,selectedCard=null,levelIndex=Math.max(0,Math.min(6,Number(localStorage.getItem('bmt-level')||0))),stepIndex=0,coins=Number(localStorage.getItem('bmt-coins')||0),stars=Number(localStorage.getItem('bmt-stars')||0),soundOn=true,audioCtx=null,anim=null;
 const challenges=[
 {title:'البنّاء المبتدئ',expr:'8 + 3 × (6 − 2)',steps:['6 − 2 = 4','3 × 4 = 12','8 + 12 = 20']},
 {title:'البنّاء المبتدئ',expr:'5 + 2 × (7 − 3)',steps:['7 − 3 = 4','2 × 4 = 8','5 + 8 = 13']},

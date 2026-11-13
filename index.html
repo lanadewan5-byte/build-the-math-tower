@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#102a43" />
+  <title>BUILD THE MATH TOWER | ابنِ برج العمليات</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="game-root">
+    <div id="hud">
+      <div class="brand"><span class="brand-icon">🏗️</span><div><b>ابنِ برج العمليات</b><small>BUILD THE MATH TOWER</small></div></div>
+      <div class="stats"><span>⭐ <b id="stars">0</b></span><span>🪙 <b id="coins">0</b></span><span class="level-pill" id="level-label">المستوى 1</span></div>
+      <button id="sound-toggle" class="icon-btn" aria-label="الصوت">🔊</button>
+    </div>
+    <div id="hint" class="hint">استخدم W A S D للحركة و Space للقفز، ثم اقترب من موقع البناء.</div>
+    <div id="interaction" class="interaction hidden">حان وقت البناء يا مهندس! <button id="open-challenge">ابدأ البناء</button></div>
+    <div id="challenge" class="panel hidden">
+      <div class="panel-head"><div><small id="stage-name">المهمة الهندسية</small><h2>رتّب خطوات الحل</h2></div><button id="close-challenge" class="close">✕</button></div>
+      <div class="expression" id="expression">8 + 3 × (6 − 2)</div>
+      <p class="instruction">اسحب بطاقات الحل إلى أماكنها من الأسفل إلى الأعلى، أو اضغط البطاقة ثم المكان المناسب.</p>
+      <div class="progress-wrap"><div class="progress-label"><span>تقدم البناء</span><b id="progress-text">0 / 3</b></div><div class="progress"><i id="progress-bar"></i></div></div>
+      <div class="slots" id="slots"></div>
+      <div class="cards-title">بطاقات خطوات الحل</div>
+      <div class="cards" id="cards"></div>
+      <div id="feedback" class="feedback" aria-live="polite">اختر أول خطوة صحيحة لبدء البناء.</div>
+    </div>
+    <div id="victory" class="panel victory hidden">
+      <div class="trophy">🏆</div><h1>أحسنت يا مهندس!</h1><p id="victory-text">اكتمل البرج بنجاح!</p>
+      <button id="next-level" class="primary">المهمة التالية ←</button>
+    </div>
+    <div id="finish" class="panel victory hidden">
+      <div class="trophy">🎉</div><h1>مهندس العبقرية!</h1><p>لقد بنيت أبراج العمليات وفتحت مدينة البناء الذهبية!</p>
+      <div class="gold">🏙️ ✨ 🪙 ✨ 🏙️</div><button id="play-again" class="primary">العب من جديد</button>
+    </div>
+    <div id="touch-controls">
+      <div class="dpad"><button data-move="forward">▲</button><div><button data-move="left">◀</button><button data-move="back">▼</button><button data-move="right">▶</button></div></div>
+      <button id="jump" class="jump">قفز</button>
+    </div>
+    <div class="footer-note">عالم ثلاثي الأبعاد • تعلّم باللعب • ابنِ خطوة بخطوة</div>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
